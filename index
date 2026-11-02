@@ -1,1 +1,446 @@
-<!DOCTYPE html><html style="height: 100%;"><body style="height: 100%; margin: 0;"><iframe src="https://copilotstudio.microsoft.com/environments/Default-bc52be20-d18a-4e38-a913-eec0a4df586e/bots/cre2b_bot_rg3HN4/webchat?__version__=2&enableFileAttachment=false&cliAgent=true" frameborder="0" style="width: 100%; height: 100%; border: 0;"></iframe></body></html>
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2026 Data</title>
+    <style>
+      :root {
+        --bg-1: #07111f;
+        --bg-2: #0e1d33;
+        --panel: rgba(15, 23, 42, 0.8);
+        --panel-strong: rgba(15, 23, 42, 0.96);
+        --card: rgba(15, 23, 42, 0.7);
+        --line: rgba(148, 163, 184, 0.2);
+        --text: #e5eefb;
+        --muted: #9bb2cf;
+        --primary: #7c9dff;
+        --primary-2: #5eead4;
+        --accent: #f59e0b;
+        --shadow: 0 20px 60px rgba(15, 23, 42, 0.55);
+      }
+
+      * { box-sizing: border-box; }
+
+      html, body {
+        margin: 0;
+        min-height: 100%;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(124, 157, 255, 0.2), transparent 33%),
+          radial-gradient(circle at bottom right, rgba(94, 234, 212, 0.12), transparent 26%),
+          linear-gradient(135deg, var(--bg-1), var(--bg-2));
+        color: var(--text);
+      }
+
+      body {
+        min-height: 100vh;
+        padding: 28px 28px 48px;
+      }
+
+      .page-shell {
+        max-width: 1380px;
+        margin: 0 auto;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 18px 22px;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: rgba(9, 16, 29, 0.55);
+        backdrop-filter: blur(14px);
+        box-shadow: var(--shadow);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 800;
+        font-size: 1.25rem;
+        letter-spacing: 0.02em;
+      }
+
+      .brand-mark {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--primary), var(--primary-2));
+        color: #04111f;
+        font-size: 0.9rem;
+        box-shadow: 0 10px 20px rgba(124, 157, 255, 0.4);
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      nav a {
+        color: var(--muted);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      nav a:hover {
+        color: var(--text);
+      }
+
+      .ghost-btn,
+      .primary-btn,
+      .secondary-btn {
+        appearance: none;
+        border: none;
+        cursor: pointer;
+        border-radius: 999px;
+        font-weight: 700;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .ghost-btn {
+        padding: 12px 18px;
+        background: rgba(124, 157, 255, 0.08);
+        border: 1px solid rgba(124, 157, 255, 0.25);
+        color: var(--text);
+      }
+
+      .primary-btn {
+        padding: 15px 26px;
+        background: linear-gradient(135deg, var(--primary), #a78bfa);
+        color: #fff;
+        box-shadow: 0 12px 28px rgba(124, 157, 255, 0.35);
+      }
+
+      .secondary-btn {
+        padding: 15px 26px;
+        background: rgba(148, 163, 184, 0.08);
+        border: 1px solid var(--line);
+        color: var(--text);
+      }
+
+      .ghost-btn:hover,
+      .primary-btn:hover,
+      .secondary-btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.12fr 0.88fr;
+        align-items: center;
+        gap: 36px;
+        padding: 54px 16px 26px;
+      }
+
+      .hero-copy {
+        padding-right: 10px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        width: fit-content;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(94, 234, 212, 0.08);
+        border: 1px solid rgba(94, 234, 212, 0.2);
+        color: var(--primary-2);
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 22px 0 18px;
+        font-size: clamp(2.6rem, 3vw + 1.4rem, 5rem);
+        line-height: 1.02;
+        letter-spacing: -0.05em;
+      }
+
+      h1 span {
+        display: inline-block;
+        background: linear-gradient(135deg, #dfe9ff, #77f7df);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .hero-copy p {
+        max-width: 620px;
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.08rem;
+        line-height: 1.8;
+      }
+
+      .cta-row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-top: 28px;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(120px, 1fr));
+        gap: 18px;
+        margin-top: 38px;
+      }
+
+      .stat-card {
+        padding: 18px 16px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(15, 23, 42, 0.55);
+      }
+
+      .stat-card strong {
+        display: block;
+        font-size: 1.5rem;
+        font-weight: 800;
+      }
+
+      .stat-card span {
+        display: block;
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 0.86rem;
+      }
+
+      .hero-panel {
+        position: relative;
+      }
+
+      .panel-shell {
+        position: relative;
+        padding: 16px;
+        border-radius: 28px;
+        border: 1px solid rgba(148, 163, 184, 0.18);
+        background: linear-gradient(180deg, rgba(15, 23, 42, 0.82), rgba(9, 17, 31, 0.92));
+        box-shadow: var(--shadow);
+      }
+
+      .panel-badge {
+        position: absolute;
+        top: -10px;
+        left: 24px;
+        z-index: 2;
+        padding: 9px 14px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--primary), var(--primary-2));
+        color: #061320;
+        font-size: 0.74rem;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .chat-window {
+        overflow: hidden;
+        width: 100%;
+        min-height: 620px;
+        border-radius: 22px;
+        border: 1px solid rgba(148, 163, 184, 0.14);
+        background: rgba(8, 12, 20, 0.9);
+      }
+
+      .chat-window iframe {
+        display: block;
+        width: 100%;
+        height: 620px;
+        border: 0;
+        background: #0b1220;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+        margin-top: 20px;
+      }
+
+      .feature-card {
+        padding: 24px 22px;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: rgba(15, 23, 42, 0.55);
+      }
+
+      .feature-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 52px;
+        height: 52px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, rgba(124, 157, 255, 0.18), rgba(94, 234, 212, 0.18));
+        font-size: 1.4rem;
+      }
+
+      .feature-card h3 {
+        margin: 18px 0 10px;
+        font-size: 1.2rem;
+      }
+
+      .feature-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      @media (max-width: 980px) {
+        body {
+          padding: 18px 16px 32px;
+        }
+
+        .topbar {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        nav {
+          order: 3;
+          width: 100%;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+
+        .hero {
+          grid-template-columns: 1fr;
+          padding-top: 38px;
+        }
+
+        .feature-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .cta-row,
+        .stats {
+          grid-template-columns: 1fr;
+          display: grid;
+        }
+
+        .cta-row {
+          gap: 12px;
+        }
+
+        .primary-btn,
+        .secondary-btn,
+        .ghost-btn {
+          width: 100%;
+        }
+
+        .chat-window,
+        .chat-window iframe {
+          min-height: 520px;
+          height: 520px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark">2026</span>
+          <span>Data</span>
+        </div>
+
+        <nav aria-label="메인 메뉴">
+          <a href="#services">서비스</a>
+          <a href="#solutions">솔루션</a>
+          <a href="#insights">인사이트</a>
+          <a href="#contact">문의</a>
+        </nav>
+
+        <button class="ghost-btn" type="button">문의하기</button>
+      </header>
+
+      <main class="hero">
+        <section class="hero-copy">
+          <span class="eyebrow">AI Data Partner</span>
+          <h1>데이터로 더 빠르게<br /><span>성장하는 미래</span></h1>
+          <p>
+            2026 Data는 데이터를 분석하고, 비즈니스 인사이트를 도출하며,
+            고객 경험을 개선하는 AI 기반 데이터 솔루션을 제공합니다.
+            지금 바로 AI 챗봇을 통해 실시간 상담과 맞춤형 가이드를 받아보세요.
+          </p>
+
+          <div class="cta-row">
+            <button class="primary-btn" type="button">무료 상담 신청</button>
+            <button class="secondary-btn" type="button">서비스 보기</button>
+          </div>
+
+          <div class="stats" aria-label="핵심 지표">
+            <div class="stat-card">
+              <strong>24/7</strong>
+              <span>자동 응답</span>
+            </div>
+            <div class="stat-card">
+              <strong>98%</strong>
+              <span>문의 해결률</span>
+            </div>
+            <div class="stat-card">
+              <strong>3x</strong>
+              <span>효율 개선</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="hero-panel" aria-label="AI 챗봇 상담">
+          <div class="panel-shell">
+            <div class="panel-badge">AI Chat</div>
+            <div class="chat-window">
+              <iframe
+                src="https://copilotstudio.microsoft.com/environments/Default-bc52be20-d18a-4e38-a913-eec0a4df586e/bots/cre2b_bot_rg3HN4/webchat?__version__=2&enableFileAttachment=false&cliAgent=true"
+                title="2026 Data AI 챗봇"
+                allow="microphone; camera; geolocation"
+              ></iframe>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <section class="feature-grid" id="services">
+        <article class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>데이터 분석</h3>
+          <p>
+            기업의 데이터를 정리하고 유의미한 패턴을 발견해
+            더 나은 의사결정에 필요한 인사이트를 제공합니다.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <h3>AI 자동화</h3>
+          <p>
+            반복적인 업무를 자동화하고 고객 응대 시간을 단축해
+            운영 효율성을 높여드립니다.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">🚀</div>
+          <h3>성장 전략</h3>
+          <p>
+            트렌드 기반의 전략 수립과 실험 중심의 실행 계획으로
+            지속 가능한 성장을 지원합니다.
+          </p>
+        </article>
+      </section>
+    </div>
+  </body>
+</html>
