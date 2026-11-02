@@ -7,19 +7,21 @@
     <style>
       :root {
         --bg: #070b14;
-        --bg-2: #0d1726;
-        --panel: rgba(14, 22, 36, 0.78);
-        --panel-strong: rgba(10, 17, 28, 0.92);
-        --panel-soft: rgba(20, 31, 49, 0.7);
-        --line: rgba(147, 168, 208, 0.18);
-        --line-strong: rgba(147, 168, 208, 0.28);
+        --bg-2: #120f24;
+        --bg-3: #1a1630;
+        --panel: rgba(15, 21, 35, 0.8);
+        --panel-strong: rgba(11, 17, 28, 0.94);
+        --panel-soft: rgba(22, 28, 42, 0.72);
+        --line: rgba(158, 176, 214, 0.18);
+        --line-strong: rgba(176, 158, 217, 0.26);
         --text: #edf4ff;
-        --muted: #9bb0d1;
-        --primary: #6ea8fe;
-        --primary-2: #84f1d0;
-        --primary-3: #8b5cf6;
-        --gold: #f7c66d;
-        --shadow: 0 24px 80px rgba(2, 6, 23, 0.75);
+        --muted: #a4b3d0;
+        --primary: #61a8ff;
+        --primary-2: #8577ff;
+        --primary-3: #d4a74a;
+        --gold: #f5c76d;
+        --gold-soft: rgba(245, 199, 109, 0.16);
+        --shadow: 0 24px 80px rgba(3, 6, 18, 0.78);
         --radius: 26px;
       }
 
@@ -33,10 +35,10 @@
         font-family: Inter, "Segoe UI", sans-serif;
         color: var(--text);
         background:
-          radial-gradient(circle at 15% 20%, rgba(110, 168, 254, 0.16), transparent 24%),
-          radial-gradient(circle at 80% 10%, rgba(139, 92, 246, 0.18), transparent 28%),
-          radial-gradient(circle at 50% 75%, rgba(132, 241, 208, 0.1), transparent 26%),
-          linear-gradient(135deg, #050a12 0%, #0a1220 42%, #0d1726 100%);
+          radial-gradient(circle at 15% 20%, rgba(97, 168, 255, 0.18), transparent 22%),
+          radial-gradient(circle at 82% 8%, rgba(133, 119, 255, 0.18), transparent 26%),
+          radial-gradient(circle at 58% 68%, rgba(245, 199, 109, 0.12), transparent 24%),
+          linear-gradient(135deg, #060b12 0%, #0d1322 38%, #100f24 100%);
       }
 
       a { color: inherit; }
@@ -55,9 +57,9 @@
         padding: 18px 22px;
         border: 1px solid var(--line);
         border-radius: 20px;
-        background: rgba(9, 15, 24, 0.62);
+        background: rgba(10, 15, 24, 0.68);
         backdrop-filter: blur(18px);
-        box-shadow: 0 12px 44px rgba(7, 11, 20, 0.35);
+        box-shadow: 0 12px 44px rgba(7, 11, 20, 0.38);
       }
 
       .brand {
@@ -76,11 +78,11 @@
         width: 42px;
         height: 42px;
         border-radius: 14px;
-        background: linear-gradient(135deg, var(--primary), var(--primary-2));
+        background: linear-gradient(135deg, var(--primary), var(--primary-2), var(--gold));
         color: #07131f;
         font-size: 0.86rem;
         font-weight: 900;
-        box-shadow: 0 12px 26px rgba(110,168,254,0.38);
+        box-shadow: 0 12px 26px rgba(98, 119, 255, 0.38);
       }
 
       nav {
@@ -104,7 +106,7 @@
         bottom: -8px;
         width: 100%;
         height: 2px;
-        background: linear-gradient(90deg, var(--primary), var(--primary-2));
+        background: linear-gradient(90deg, var(--primary), var(--primary-2), var(--gold));
         opacity: 0;
         transform: scaleX(0.6);
         transition: all 0.2s ease;
@@ -140,16 +142,16 @@
 
       .btn-ghost {
         padding: 12px 18px;
-        background: rgba(110, 168, 254, 0.08);
-        border: 1px solid rgba(110, 168, 254, 0.22);
+        background: rgba(98, 119, 255, 0.08);
+        border: 1px solid rgba(133, 119, 255, 0.22);
         color: var(--text);
       }
 
       .btn-primary {
         padding: 15px 24px;
-        background: linear-gradient(135deg, var(--primary), var(--primary-3));
+        background: linear-gradient(135deg, var(--primary), var(--primary-2), var(--gold));
         color: white;
-        box-shadow: 0 14px 36px rgba(110, 168, 254, 0.38);
+        box-shadow: 0 14px 36px rgba(98, 119, 255, 0.38);
       }
 
       .hero {
@@ -170,9 +172,9 @@
         gap: 8px;
         padding: 8px 14px;
         border-radius: 999px;
-        border: 1px solid rgba(132, 241, 208, 0.25);
-        background: rgba(132, 241, 208, 0.06);
-        color: var(--primary-2);
+        border: 1px solid rgba(245, 199, 109, 0.24);
+        background: rgba(245, 199, 109, 0.08);
+        color: var(--gold);
         font-size: 0.72rem;
         font-weight: 700;
         letter-spacing: 0.14em;
@@ -184,8 +186,8 @@
         width: 8px;
         height: 8px;
         border-radius: 50%;
-        background: var(--primary-2);
-        box-shadow: 0 0 10px rgba(132, 241, 208, 0.8);
+        background: var(--gold);
+        box-shadow: 0 0 12px rgba(245, 199, 109, 0.9);
       }
 
       h1 {
@@ -197,7 +199,7 @@
 
       .title-gradient {
         display: inline-block;
-        background: linear-gradient(135deg, #f4f8ff 0%, #89d4ff 18%, #a7f2d3 58%, #d9c8ff 100%);
+        background: linear-gradient(135deg, #f6fbff 0%, #8ec4ff 20%, #8a7dff 52%, #f5c76d 100%);
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
@@ -229,7 +231,7 @@
         padding: 18px 18px 16px;
         border: 1px solid var(--line);
         border-radius: 18px;
-        background: linear-gradient(180deg, rgba(17, 27, 41, 0.9), rgba(12, 20, 31, 0.7));
+        background: linear-gradient(180deg, rgba(19, 25, 40, 0.92), rgba(12, 19, 28, 0.78));
         box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
       }
 
@@ -237,6 +239,7 @@
         display: block;
         font-size: clamp(1.4rem, 1vw + 1rem, 1.9rem);
         letter-spacing: -0.04em;
+        color: var(--text);
       }
 
       .stat-card span {
@@ -255,7 +258,7 @@
         padding: 16px;
         border-radius: 30px;
         border: 1px solid var(--line-strong);
-        background: linear-gradient(180deg, rgba(13, 20, 31, 0.9), rgba(7, 12, 19, 0.95));
+        background: linear-gradient(180deg, rgba(15, 20, 31, 0.96), rgba(8, 12, 19, 0.96));
         box-shadow: var(--shadow);
       }
 
@@ -264,7 +267,7 @@
         position: absolute;
         inset: 0;
         border-radius: 30px;
-        background: linear-gradient(135deg, rgba(110,168,254,0.12), rgba(132,241,208,0.05), rgba(139,92,246,0.12));
+        background: linear-gradient(135deg, rgba(97, 168, 255, 0.12), rgba(133, 119, 255, 0.09), rgba(245, 199, 109, 0.09));
         pointer-events: none;
       }
 
@@ -275,13 +278,13 @@
         z-index: 2;
         padding: 9px 14px;
         border-radius: 999px;
-        background: linear-gradient(135deg, var(--primary), var(--primary-2));
+        background: linear-gradient(135deg, var(--primary), var(--primary-2), var(--gold));
         color: #07131f;
         font-size: 0.72rem;
         font-weight: 800;
         letter-spacing: 0.12em;
         text-transform: uppercase;
-        box-shadow: 0 10px 22px rgba(110,168,254,0.28);
+        box-shadow: 0 10px 22px rgba(98, 119, 255, 0.28);
       }
 
       .chat-window {
@@ -291,7 +294,7 @@
         width: 100%;
         min-height: 640px;
         border-radius: 24px;
-        border: 1px solid rgba(147, 168, 208, 0.12);
+        border: 1px solid rgba(158, 176, 214, 0.12);
         background: #08131d;
       }
 
@@ -316,7 +319,7 @@
         padding: 26px 22px 24px;
         border: 1px solid var(--line);
         border-radius: 24px;
-        background: linear-gradient(180deg, rgba(15, 23, 35, 0.82), rgba(12, 18, 28, 0.74));
+        background: linear-gradient(180deg, rgba(17, 24, 38, 0.82), rgba(11, 17, 27, 0.76));
       }
 
       .feature-card::before {
@@ -325,7 +328,7 @@
         inset: 0 auto auto 0;
         width: 100%;
         height: 2px;
-        background: linear-gradient(90deg, var(--primary), var(--primary-2), transparent);
+        background: linear-gradient(90deg, var(--primary), var(--primary-2), var(--gold));
       }
 
       .feature-icon {
@@ -335,8 +338,8 @@
         width: 56px;
         height: 56px;
         border-radius: 18px;
-        background: linear-gradient(135deg, rgba(110,168,254,0.14), rgba(132,241,208,0.16));
-        border: 1px solid rgba(110,168,254,0.2);
+        background: linear-gradient(135deg, rgba(97, 168, 255, 0.16), rgba(133, 119, 255, 0.18), rgba(245, 199, 109, 0.12));
+        border: 1px solid rgba(245, 199, 109, 0.18);
         font-size: 1.6rem;
       }
 
